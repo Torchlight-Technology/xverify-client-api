@@ -1,5 +1,5 @@
 {
-    "name": "xverify/XverifyClientAPI",
+    "name": "xverify/xverify-client-api",
     "description": "Xverify PHP Client",
     "autoload": {
         "classmap": ["lib"]
