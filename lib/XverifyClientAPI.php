@@ -1,5 +1,7 @@
 <?php
 
+namespace xverify;
+
 class XverifyClientAPI {
 
     var $api_host = 'http://www.xverify.com/services';

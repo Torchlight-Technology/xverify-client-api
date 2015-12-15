@@ -1,0 +1,7 @@
+{
+    "name": "xverify/XverifyClientAPI",
+    "description": "Xverify PHP Client",
+    "autoload": {
+        "classmap": ["lib"]
+    }
+}
