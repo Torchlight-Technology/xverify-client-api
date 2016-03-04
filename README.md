@@ -1,7 +1,7 @@
 Install with composer
 
 ```
-composer require xverify/xverify-client-api:"dev-master"
+composer require xverify/xverify-client-api:"~1.0"
 ```
 
 Usage in your project
