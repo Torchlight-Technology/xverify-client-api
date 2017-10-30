@@ -57,8 +57,8 @@ class XverifyClientAPI {
 		curl_setopt($curl_connection, CURLOPT_SSL_VERIFYPEER, false);
 		curl_setopt($curl_connection, CURLOPT_HEADER, 0);
 		curl_setopt($curl_connection, CURLOPT_FOLLOWLOCATION, 1);
-        curl_setopt($curl_connection, CURLOPT_CONNECTTIMEOUT, $this->connect_timeout);
-        curl_setopt($curl_connection, CURLOPT_TIMEOUT, $this->timeout);
+ 		curl_setopt($curl_connection, CURLOPT_CONNECTTIMEOUT, $this->connect_timeout);
+ 		curl_setopt($curl_connection, CURLOPT_TIMEOUT, $this->timeout);
 		$result = curl_exec($curl_connection);
 		curl_close($curl_connection);
 		$this->response = $result;
