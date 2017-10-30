@@ -9,13 +9,17 @@ class XverifyClientAPI {
     var $services = array('phone','email','address','phoneconfirm','lead_scorecard','phoneconfirm_code', 'allinone');
     var $response;
 	var $options;
+	var $timeout;
+	var $connect_timeout;
 
-    function __construct($api_key, $options = array()) {
+    function __construct($api_key, $options = array(), $timeout = 60, $connect_timeout = 10) {
         $this->api_key = $api_key;
         if (empty($this->api_key)) {
             throw new InvalidArgumentException("api_key required");
         }
         $this->options = $options;
+        $this->timeout = $timeout;
+        $this->connect_timeout = $connect_timeout;
     }
 
     function verify($serviceName,$data) {
@@ -53,6 +57,8 @@ class XverifyClientAPI {
 		curl_setopt($curl_connection, CURLOPT_SSL_VERIFYPEER, false);
 		curl_setopt($curl_connection, CURLOPT_HEADER, 0);
 		curl_setopt($curl_connection, CURLOPT_FOLLOWLOCATION, 1);
+        curl_setopt($curl_connection, CURLOPT_CONNECTTIMEOUT, $this->connect_timeout);
+        curl_setopt($curl_connection, CURLOPT_TIMEOUT, $this->timeout);
 		$result = curl_exec($curl_connection);
 		curl_close($curl_connection);
 		$this->response = $result;
