@@ -1,6 +1,6 @@
 <?php
 
-namespace xverify;
+namespace torchlighttechnology;
 
 class XverifyClientAPI {
 
