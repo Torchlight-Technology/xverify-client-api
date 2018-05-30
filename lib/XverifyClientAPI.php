@@ -234,5 +234,3 @@ class XverifyClientAPI {
         return $url . '?' . http_build_query($params);
     }
 }
-
-new XverifyClientAPI();
