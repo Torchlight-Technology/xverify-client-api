@@ -13,14 +13,14 @@ class XverifyClientAPI {
     function __construct($api_key, $options = array()) {
         $this->api_key = $api_key;
         if (empty($this->api_key)) {
-            throw new InvalidArgumentException("api_key required");
+            throw new \InvalidArgumentException("api_key required");
         }
         $this->options = $options;
     }
 
     function verify($serviceName,$data) {
 		if (empty($serviceName) or !in_array($serviceName,$this->services)) { 
-            throw new InvalidArgumentException("Invalid service name");
+            throw new \InvalidArgumentException("Invalid service name");
         }
         $requests = array();
         $requestUrl = $this->$serviceName($data);
@@ -234,3 +234,5 @@ class XverifyClientAPI {
         return $url . '?' . http_build_query($params);
     }
 }
+
+new XverifyClientAPI();
