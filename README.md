@@ -7,7 +7,7 @@ composer require xverify/xverify-client-api:"~1.0"
 Usage in your project
 
 ```php
-use xverify\XverifyClientAPI;
+use torchlighttechnology\XverifyClientAPI;
 
 $client = new XverifyClientAPI;
 
